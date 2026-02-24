@@ -1,26 +1,467 @@
 @import "tailwindcss";
 
+@theme {
+  /* ── Breakpoints ── */
+  --breakpoint-xs: 30rem;    /* 480px */
+  --breakpoint-sm: 40rem;    /* 640px */
+  --breakpoint-md: 48rem;    /* 768px */
+  --breakpoint-lg: 64rem;    /* 1024px */
+  --breakpoint-xl: 80rem;    /* 1280px */
+  --breakpoint-2xl: 96rem;   /* 1536px */
+  --breakpoint-3xl: 120rem;  /* 1920px */
+
+  /* ── Font Families ── */
+  --font-display: var(--font-family-display), "Georgia", serif;
+  --font-body: var(--font-family-body), "system-ui", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+
+  /* ── Font Sizes — Fluid Type Scale ── */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: clamp(2rem, 4vw, 2.5rem);
+  --text-5xl: clamp(2.5rem, 5vw, 3.25rem);
+  --text-6xl: clamp(3rem, 6vw, 4rem);
+  --text-7xl: clamp(3.5rem, 7vw, 5rem);
+  --text-hero: clamp(3.5rem, 8vw, 7rem);
+
+  /* ── Line Heights ── */
+  --leading-none: 1;
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+
+  /* ── Letter Spacing ── */
+  --tracking-tighter: -0.04em;
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  /* ── Spacing Scale (extends defaults) ── */
+  --spacing-18: 4.5rem;
+  --spacing-88: 22rem;
+  --spacing-128: 32rem;
+
+  /* ── Border Radius ── */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 2px 0 oklch(0% 0 0 / 0.04);
+  --shadow-md: 0 4px 6px -1px oklch(0% 0 0 / 0.06), 0 2px 4px -2px oklch(0% 0 0 / 0.04);
+  --shadow-lg: 0 10px 15px -3px oklch(0% 0 0 / 0.08), 0 4px 6px -4px oklch(0% 0 0 / 0.04);
+  --shadow-xl: 0 20px 25px -5px oklch(0% 0 0 / 0.1), 0 8px 10px -6px oklch(0% 0 0 / 0.05);
+  --shadow-glow: 0 0 20px oklch(65% 0.15 45 / 0.15);
+
+  /* ── Transitions ── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 700ms;
+
+  /* ── Z-Index Scale ── */
+  --z-behind: -1;
+  --z-base: 0;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-overlay: 30;
+  --z-modal: 40;
+  --z-toast: 50;
+  --z-max: 9999;
+
+  /* Animations */
+  /* All runtime animations are handled by Motion (UI) and GSAP (hero/scroll) */
+  --animate-fade-in: fade-in 0.4s var(--ease-out-expo) forwards;
+}
+
+/* Pre-hydration Keyframe
+   Provides a smooth initial paint before Motion/GSAP hydrate.
+   Also serves as no-JS fallback for critical content. */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-background:        oklch(98% 0.005 80);       /* warm ivory */
+  --color-background-alt:    oklch(95.5% 0.008 80);     /* slightly darker ivory */
+  --color-surface:           oklch(100% 0 0);            /* pure white cards */
+  --color-surface-hover:     oklch(97% 0.005 80);        /* subtle hover */
+
+  --color-foreground:        oklch(18% 0.01 260);        /* near-black, warm */
+  --color-foreground-muted:  oklch(45% 0.01 260);        /* secondary text */
+  --color-foreground-subtle: oklch(62% 0.01 260);        /* tertiary / captions */
+
+  --color-primary:           oklch(55% 0.14 30);         /* warm terracotta */
+  --color-primary-hover:     oklch(48% 0.15 30);         /* deeper on hover */
+  --color-primary-foreground: oklch(98% 0.005 80);       /* text on primary bg */
+
+  --color-secondary:         oklch(94% 0.01 260);        /* cool light gray */
+  --color-secondary-hover:   oklch(90% 0.01 260);
+  --color-secondary-foreground: oklch(25% 0.01 260);
+
+  --color-accent:            oklch(70% 0.16 145);        /* sage green */
+  --color-accent-foreground:  oklch(98% 0 0);
+
+  --color-border:            oklch(90% 0.005 80);        /* subtle warm border */
+  --color-border-hover:      oklch(82% 0.01 80);
+  --color-ring:              oklch(55% 0.14 30);         /* focus ring = primary */
+  --color-ring-offset:       oklch(98% 0.005 80);        /* matches bg */
+
+  --color-muted:             oklch(96% 0.005 80);
+  --color-muted-foreground:  oklch(50% 0.01 260);
+
+  --color-destructive:       oklch(55% 0.2 25);          /* warm red */
+  --color-success:           oklch(60% 0.16 150);        /* green */
+  --color-warning:           oklch(70% 0.16 80);         /* amber */
+
+  /* ── Grain / Texture Overlay ── */
+  --noise-opacity: 0.025;
+
+  /* ── Glassmorphism ── */
+  --glass-bg: oklch(100% 0 0 / 0.72);
+  --glass-border: oklch(90% 0 0 / 0.5);
+  --glass-blur: 12px;
+
+  /* ── Header ── */
+  --header-height: 4rem;
+  --header-bg: oklch(98% 0.005 80 / 0.85);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --color-background:        oklch(12% 0.01 260);        /* deep charcoal */
+  --color-background-alt:    oklch(15% 0.01 260);
+  --color-surface:           oklch(18% 0.012 260);       /* elevated surface */
+  --color-surface-hover:     oklch(22% 0.012 260);
+
+  --color-foreground:        oklch(93% 0.005 80);        /* warm off-white */
+  --color-foreground-muted:  oklch(70% 0.01 80);
+  --color-foreground-subtle: oklch(50% 0.01 260);
+
+  --color-primary:           oklch(68% 0.14 30);         /* lighter terracotta in dark */
+  --color-primary-hover:     oklch(74% 0.15 30);
+  --color-primary-foreground: oklch(12% 0.01 260);
+
+  --color-secondary:         oklch(22% 0.012 260);
+  --color-secondary-hover:   oklch(28% 0.012 260);
+  --color-secondary-foreground: oklch(90% 0.005 80);
+
+  --color-accent:            oklch(72% 0.14 145);
+  --color-accent-foreground:  oklch(12% 0 0);
+
+  --color-border:            oklch(25% 0.01 260);
+  --color-border-hover:      oklch(35% 0.01 260);
+  --color-ring:              oklch(68% 0.14 30);
+  --color-ring-offset:       oklch(12% 0.01 260);
+
+  --color-muted:             oklch(20% 0.01 260);
+  --color-muted-foreground:  oklch(65% 0.01 80);
+
+  --color-destructive:       oklch(65% 0.18 25);
+  --color-success:           oklch(68% 0.14 150);
+  --color-warning:           oklch(75% 0.14 80);
+
+  --noise-opacity: 0.04;
+
+  --glass-bg: oklch(12% 0.01 260 / 0.72);
+  --glass-border: oklch(25% 0.01 260 / 0.5);
+  --glass-blur: 12px;
+
+  --header-bg: oklch(12% 0.01 260 / 0.85);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+*,
+*::before,
+*::after {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  hanging-punctuation: first last;
+}
+
+/* Disable smooth scroll when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  line-height: var(--leading-normal);
+  overflow-x: hidden;
+  min-height: 100dvh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+  max-width: 68ch; /* Optimal reading width */
+}
+
+/* ── Selection ── */
+::selection {
+  background-color: oklch(55% 0.14 30 / 0.2);
+  color: var(--color-foreground);
+}
+
+.dark ::selection {
+  background-color: oklch(68% 0.14 30 / 0.25);
+}
+
+/* ── Noise Texture Overlay ── */
+@utility noise-overlay {
+  position: relative;
+}
+
+@utility noise-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: var(--noise-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+/* ── Glassmorphism ── */
+@utility glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+}
+
+/* ── Text Gradient ── */
+@utility text-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-accent) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Container (responsive, centered) ── */
+@utility container-narrow {
+  width: 100%;
+  max-width: 48rem; /* 768px — for reading content */
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@utility container-wide {
+  width: 100%;
+  max-width: 80rem; /* 1280px — for grids & layouts */
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (width >= 40rem) {
+  @utility container-narrow { padding-inline: 2rem; }
+  @utility container-wide { padding-inline: 2rem; }
+}
+
+@media (width >= 64rem) {
+  @utility container-narrow { padding-inline: 2.5rem; }
+  @utility container-wide { padding-inline: 2.5rem; }
+}
+
+/* ── Focus Ring — Visible only on keyboard ── */
+:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ── Skip to Content Link ── */
+@utility skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@utility skip-link:focus {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.75rem 1.5rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  z-index: var(--z-max);
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  font-size: var(--text-sm);
+}
+
+/* ── Visually Hidden (screen-reader only) ── */
+@utility sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ── Reduced Motion: Kill ALL animations ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Manual animation disable via data attribute ── */
+[data-animations="disabled"] *,
+[data-animations="disabled"] *::before,
+[data-animations="disabled"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* ── Header ── */
+@utility header-blur {
+  background: var(--header-bg);
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+}
+
+/* ── Cards ── */
+@utility card-base {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  transition: border-color var(--duration-normal) var(--ease-out-quart),
+              box-shadow var(--duration-normal) var(--ease-out-quart);
+}
+
+@utility card-base:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── Interactive Elements ── */
+@utility interactive {
+  cursor: pointer;
+  transition:
+    color var(--duration-fast) var(--ease-out-quart),
+    background-color var(--duration-fast) var(--ease-out-quart),
+    border-color var(--duration-fast) var(--ease-out-quart),
+    opacity var(--duration-fast) var(--ease-out-quart),
+    transform var(--duration-fast) var(--ease-out-quart);
+}
+
+@utility interactive:active {
+  transform: scale(0.98);
+}
+
+/* ── Links ── */
+@utility link-underline {
+  text-decoration: none;
+  background-image: linear-gradient(var(--color-primary), var(--color-primary));
+  background-size: 0% 1.5px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size var(--duration-normal) var(--ease-out-expo);
+}
+
+@utility link-underline:hover {
+  background-size: 100% 1.5px;
+}
+
+/* Thin, styled scrollbar */
+:root {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-hover) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-border-hover);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-foreground-subtle);
+}
+
+@utility section-padding {
+  padding-block: clamp(3rem, 8vw, 6rem);
+}
+
+@utility section-padding-lg {
+  padding-block: clamp(4rem, 10vw, 8rem);
+}
+
+/* ── Hero specific ── */
+@utility hero-height {
+  min-height: calc(100dvh - var(--header-height));
+  display: flex;
+  align-items: center;
 }
