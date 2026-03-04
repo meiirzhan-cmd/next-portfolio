@@ -1,0 +1,35 @@
+{
+  "seo": {
+    "title": "Meiirzhan — Full Stack Developer",
+    "description": "Full Stack Developer specializing in modern technology, Next.js, React, and TypeScript.",
+    "keywords": ["full stack developer", "web developer", "next.js", "react", "typescript", "portfolio"]
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Meiirzhan",
+    "tagline": "Full Stack Developer",
+    "description": "I build modern, performant web applications with a focus on clean code, great user experience, and cutting-edge technologies.",
+    "ctaPrimary": {
+      "label": "View Projects",
+      "href": "/projects"
+    },
+    "ctaSecondary": {
+      "label": "Get in Touch",
+      "href": "/contact"
+    }
+  },
+  "featuredSection": {
+    "heading": "Featured Projects",
+    "subtitle": "A selection of my recent work and personal projects."
+  },
+  "aboutPreview": {
+    "heading": "About Me",
+    "text": "I'm a passionate developer who loves building things for the web. With experience in both front-end and back-end development, I create seamless digital experiences.",
+    "ctaLabel": "Learn More"
+  },
+  "contactCta": {
+    "heading": "Let's Work Together",
+    "text": "Have a project in mind or just want to chat? I'd love to hear from you.",
+    "ctaLabel": "Contact Me"
+  }
+}

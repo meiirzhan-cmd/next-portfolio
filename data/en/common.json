@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "© 2026 Meiirzhan. All rights reserved.",
+    "builtWith": "Built with Next.js & TypeScript"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "animation": {
+    "enable": "Enable animations",
+    "disable": "Disable animations",
+    "label": "Animations"
+  },
+  "language": {
+    "en": "English",
+    "ru": "Русский",
+    "label": "Language"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "toggleTheme": "Toggle theme",
+    "toggleLanguage": "Switch language",
+    "toggleAnimation": "Toggle animations"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for doesn't exist or has been moved.",
+    "backHome": "Back to home"
+  }
+}
