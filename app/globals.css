@@ -242,7 +242,7 @@ p {
   position: relative;
 }
 
-@utility noise-overlay::after {
+.noise-overlay::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -290,13 +290,13 @@ p {
 }
 
 @media (width >= 40rem) {
-  @utility container-narrow { padding-inline: 2rem; }
-  @utility container-wide { padding-inline: 2rem; }
+  .container-narrow { padding-inline: 2rem; }
+  .container-wide { padding-inline: 2rem; }
 }
 
 @media (width >= 64rem) {
-  @utility container-narrow { padding-inline: 2.5rem; }
-  @utility container-wide { padding-inline: 2.5rem; }
+  .container-narrow { padding-inline: 2.5rem; }
+  .container-wide { padding-inline: 2.5rem; }
 }
 
 /* ── Focus Ring — Visible only on keyboard ── */
@@ -323,7 +323,7 @@ p {
   border-width: 0;
 }
 
-@utility skip-link:focus {
+.skip-link:focus {
   position: fixed;
   top: 1rem;
   left: 1rem;
@@ -393,7 +393,7 @@ p {
               box-shadow var(--duration-normal) var(--ease-out-quart);
 }
 
-@utility card-base:hover {
+.card-base:hover {
   border-color: var(--color-border-hover);
   box-shadow: var(--shadow-lg);
 }
@@ -409,7 +409,7 @@ p {
     transform var(--duration-fast) var(--ease-out-quart);
 }
 
-@utility interactive:active {
+.interactive:active {
   transform: scale(0.98);
 }
 
@@ -423,7 +423,7 @@ p {
   transition: background-size var(--duration-normal) var(--ease-out-expo);
 }
 
-@utility link-underline:hover {
+.link-underline:hover {
   background-size: 100% 1.5px;
 }
 
