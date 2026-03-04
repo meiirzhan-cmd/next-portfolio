@@ -34,6 +34,13 @@ export interface CommonTranslations {
   };
 }
 
+export interface ImageAsset {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+}
+
 export interface SocialLink {
   platform: SocialPlatform;
   url: string;
@@ -74,8 +81,8 @@ export interface Project {
   tags: string[];
   featured: boolean;
   year: number;
-  thumbnail: ImageData;
-  images: ImageData[];
+  thumbnail: ImageAsset;
+  images: ImageAsset[];
   liveUrl?: string | null;
   githubUrl?: string | null;
   techStack: string[];
@@ -126,40 +133,6 @@ export interface HomePageData {
     heading: string;
     text: string;
     ctaLabel: string;
-  };
-}
-
-export interface CommonTranslations {
-  nav: Record<NavRouteKey, string> & Record<string, string>;
-  footer: {
-    copyright: string;
-    builtWith: string;
-  };
-  theme: {
-    light: string;
-    dark: string;
-    system: string;
-  };
-  animation: {
-    enable: string;
-    disable: string;
-    label: string;
-  };
-  language: Record<Locale, string> & {
-    label: string;
-  };
-  accessibility: {
-    skipToContent: string;
-    openMenu: string;
-    closeMenu: string;
-    toggleTheme: string;
-    toggleLanguage: string;
-    toggleAnimation: string;
-  };
-  notFound: {
-    title: string;
-    description: string;
-    backHome: string;
   };
 }
 
@@ -233,7 +206,7 @@ export interface BlogPost {
   /** Estimated reading time in minutes */
   readingTime: number;
   tags: string[];
-  thumbnail: ImageData;
+  thumbnail: ImageAsset;
   featured: boolean;
   /** Optional author override (defaults to site author) */
   author?: string;

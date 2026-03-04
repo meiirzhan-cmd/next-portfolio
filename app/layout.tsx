@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import "@/styles/globals.css";
+import "./globals.css";
 import { Providers } from "@/providers/provider";
 import { SITE_CONFIG } from "@/lib/constants";
 import { fontVariables } from "@/lib/fonts";
@@ -63,7 +63,7 @@ interface RootLayoutProps {
  */
 export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${fontVariables} font-body antialiased`}>
         <Providers>{children}</Providers>
       </body>
