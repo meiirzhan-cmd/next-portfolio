@@ -11,14 +11,14 @@ const Footer = ({ translations, className }: FooterProps) => {
 
   return (
     <footer
-      className={cn("border-t border-[var(--color-border)]", "py-8", className)}
+      className={cn("border-t border-(--color-border)", "py-8", className)}
       role="contentinfo"
     >
       <div className="container-wide flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-[var(--color-foreground-subtle)]">
+        <p className="text-sm text-(--color-foreground-subtle)">
           {footer.copyright}
         </p>
-        <p className="text-sm text-[var(--color-foreground-subtle)]">
+        <p className="text-sm text-(--color-foreground-subtle)">
           {footer.builtWith}
         </p>
       </div>
