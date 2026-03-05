@@ -115,6 +115,7 @@ export interface HeroData {
   description: string;
   ctaPrimary: CtaButton;
   ctaSecondary: CtaButton;
+  hireLabel: string;
 }
 
 export interface HomePageData {

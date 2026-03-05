@@ -16,7 +16,8 @@
     "ctaSecondary": {
       "label": "Get in Touch",
       "href": "/contact"
-    }
+    },
+    "hireLabel": "Hire Me"
   },
   "featuredSection": {
     "heading": "Featured Projects",

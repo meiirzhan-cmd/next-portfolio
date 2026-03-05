@@ -16,7 +16,8 @@
     "ctaSecondary": {
       "label": "Связаться",
       "href": "/contact"
-    }
+    },
+    "hireLabel": "Нанять меня"
   },
   "featuredSection": {
     "heading": "Избранные проекты",
