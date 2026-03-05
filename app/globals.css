@@ -465,3 +465,272 @@ p {
   display: flex;
   align-items: center;
 }
+
+/* ── Hero Animated Background ── */
+.hero-bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dark .hero-bg-blob {
+  opacity: 0.08;
+}
+
+.hero-bg-blob--1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+  top: -10%;
+  left: -5%;
+  animation: blob-drift-1 20s ease-in-out infinite;
+}
+
+.hero-bg-blob--2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+  bottom: -10%;
+  right: -5%;
+  animation: blob-drift-2 24s ease-in-out infinite;
+}
+
+@keyframes blob-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(60px, 40px) scale(1.1); }
+  66% { transform: translate(-30px, 60px) scale(0.95); }
+}
+
+@keyframes blob-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-50px, -30px) scale(1.05); }
+  66% { transform: translate(40px, -50px) scale(1.1); }
+}
+
+/* ── Hero Profile Image ── */
+.hero-image-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image-circle {
+  position: relative;
+  z-index: 2;
+  border-radius: 9999px;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  border: 3px solid var(--color-border);
+}
+
+.hero-image-circle img {
+  display: block;
+  position: relative;
+  z-index: 0;
+}
+
+/* Inner rotating gradient ring */
+.hero-image-ring {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 9999px;
+  background: conic-gradient(
+    from 0deg,
+    var(--color-primary),
+    var(--color-accent),
+    var(--color-primary-hover),
+    var(--color-primary)
+  );
+  animation: ring-rotate 16s linear infinite;
+  box-shadow: 0 0 20px oklch(55% 0.14 30 / 0.25),
+              0 0 40px oklch(55% 0.14 30 / 0.1);
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 4px),
+    #000 calc(100% - 4px)
+  );
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 4px),
+    #000 calc(100% - 4px)
+  );
+}
+
+.dark .hero-image-ring {
+  box-shadow: 0 0 24px oklch(68% 0.14 30 / 0.3),
+              0 0 48px oklch(68% 0.14 30 / 0.12);
+}
+
+/* Outer dashed orbit ring */
+.hero-image-ring-outer {
+  position: absolute;
+  inset: -14px;
+  z-index: 0;
+  border-radius: 9999px;
+  border: 2px dashed oklch(55% 0.14 30 / 0.2);
+  animation: ring-rotate-reverse 28s linear infinite;
+}
+
+.dark .hero-image-ring-outer {
+  border-color: oklch(68% 0.14 30 / 0.2);
+}
+
+@keyframes ring-rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ring-rotate-reverse {
+  to { transform: rotate(-360deg); }
+}
+
+/* Hero image hover overlay — positioned as sibling over the circle */
+.hero-image-hover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 3;
+  border-radius: 9999px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: oklch(0% 0 0 / 0);
+  cursor: pointer;
+  transition: background var(--duration-slow) var(--ease-out-expo);
+}
+
+.hero-image-hover:hover {
+  background: oklch(0% 0 0 / 0.6);
+}
+
+.hero-image-overlay-btn {
+  padding: 0.625rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  color: oklch(98% 0 0);
+  background: var(--color-primary);
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(16px) scale(0.9);
+  transition:
+    opacity var(--duration-slow) var(--ease-out-expo),
+    transform var(--duration-slow) var(--ease-out-expo),
+    background-color var(--duration-fast) var(--ease-out-quart);
+}
+
+.hero-image-hover:hover .hero-image-overlay-btn {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.hero-image-overlay-btn:hover {
+  background: var(--color-primary-hover);
+}
+
+/* ── Floating Bubbles (dark background) ── */
+.hero-bubbles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-bubble {
+  position: absolute;
+  border-radius: 9999px;
+  background: oklch(100% 0 0 / 0.03);
+  animation: bubble-float linear infinite;
+}
+
+.dark .hero-bubble {
+  background: oklch(100% 0 0 / 0.025);
+}
+
+.hero-bubble:nth-child(1) {
+  width: 8px; height: 8px;
+  left: 10%; bottom: -8px;
+  animation-duration: 22s; animation-delay: 0s;
+}
+.hero-bubble:nth-child(2) {
+  width: 12px; height: 12px;
+  left: 25%; bottom: -12px;
+  animation-duration: 28s; animation-delay: 3s;
+}
+.hero-bubble:nth-child(3) {
+  width: 6px; height: 6px;
+  left: 45%; bottom: -6px;
+  animation-duration: 18s; animation-delay: 7s;
+}
+.hero-bubble:nth-child(4) {
+  width: 10px; height: 10px;
+  left: 60%; bottom: -10px;
+  animation-duration: 25s; animation-delay: 2s;
+}
+.hero-bubble:nth-child(5) {
+  width: 7px; height: 7px;
+  left: 78%; bottom: -7px;
+  animation-duration: 20s; animation-delay: 5s;
+}
+.hero-bubble:nth-child(6) {
+  width: 14px; height: 14px;
+  left: 90%; bottom: -14px;
+  animation-duration: 30s; animation-delay: 1s;
+}
+.hero-bubble:nth-child(7) {
+  width: 5px; height: 5px;
+  left: 35%; bottom: -5px;
+  animation-duration: 24s; animation-delay: 9s;
+}
+.hero-bubble:nth-child(8) {
+  width: 9px; height: 9px;
+  left: 55%; bottom: -9px;
+  animation-duration: 26s; animation-delay: 4s;
+}
+
+@keyframes bubble-float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(30px);
+    opacity: 0;
+  }
+}
+
+/* Pause ring animations when animations disabled */
+[data-animations="disabled"] .hero-image-ring,
+[data-animations="disabled"] .hero-image-ring-outer,
+[data-animations="disabled"] .hero-bg-blob,
+[data-animations="disabled"] .hero-bubble {
+  animation-play-state: paused;
+}
+
+/* ── GSAP: prevent flash of unstyled content before timeline runs ── */
+[data-animations="enabled"] [data-gsap-header],
+[data-animations="enabled"] [data-gsap="hero-image"],
+[data-animations="enabled"] [data-gsap="hero-greeting"],
+[data-animations="enabled"] [data-gsap="hero-name"],
+[data-animations="enabled"] [data-gsap="hero-tagline"],
+[data-animations="enabled"] [data-gsap="hero-description"],
+[data-animations="enabled"] [data-gsap="hero-cta"],
+[data-animations="enabled"] [data-gsap="section"],
+[data-animations="enabled"] [data-gsap-footer] {
+  opacity: 0;
+}
