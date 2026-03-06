@@ -1,0 +1,29 @@
+{
+  "seo": {
+    "title": "Контакты — Мейіржан",
+    "description": "Свяжитесь со мной для сотрудничества, фриланс-работы или просто чтобы поздороваться.",
+    "keywords": ["контакты", "найм", "фриланс", "сотрудничество"]
+  },
+  "heading": "Связаться",
+  "subtitle": "Есть проект или хотите сотрудничать? Буду рад вашему сообщению.",
+  "email": "hello@example.com",
+  "socials": [
+    { "platform": "github", "url": "https://github.com", "label": "GitHub" },
+    { "platform": "linkedin", "url": "https://linkedin.com", "label": "LinkedIn" },
+    { "platform": "telegram", "url": "https://t.me", "label": "Telegram" }
+  ],
+  "formLabels": {
+    "name": "Имя",
+    "email": "Эл. почта",
+    "subject": "Тема",
+    "message": "Сообщение",
+    "submit": "Отправить",
+    "sending": "Отправка...",
+    "success": "Сообщение отправлено! Я свяжусь с вами в ближайшее время.",
+    "error": "Что-то пошло не так. Попробуйте позже."
+  },
+  "availability": {
+    "status": "available",
+    "message": "Сейчас доступен для фриланс-работы"
+  }
+}

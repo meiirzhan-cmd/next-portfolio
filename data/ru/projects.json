@@ -1,0 +1,57 @@
+{
+  "seo": {
+    "title": "Проекты — Мейіржан",
+    "description": "Изучите мое портфолио веб-проектов, созданных с использованием современных технологий.",
+    "keywords": ["проекты", "портфолио", "веб-разработка", "react", "next.js"]
+  },
+  "heading": "Проекты",
+  "subtitle": "Коллекция проектов, над которыми я работал — от личных экспериментов до продакшен-приложений.",
+  "categories": ["Все", "Фронтенд", "Full Stack", "Открытый код"],
+  "projects": [
+    {
+      "slug": "portfolio-website",
+      "title": "Сайт-портфолио",
+      "description": "Современное портфолио на Next.js, Tailwind CSS и анимациях GSAP.",
+      "longDescription": "Этот сайт-портфолио демонстрирует мои работы и навыки. Построен на Next.js 15, Tailwind CSS v4 и GSAP для плавных анимаций. Включает тёмную тему, поддержку i18n и адаптивный дизайн.",
+      "category": "Фронтенд",
+      "tags": ["Next.js", "Tailwind CSS", "GSAP", "TypeScript"],
+      "featured": true,
+      "year": 2025,
+      "thumbnail": { "src": "/images/projects/portfolio.jpg", "alt": "Сайт-портфолио" },
+      "images": [],
+      "liveUrl": null,
+      "githubUrl": null,
+      "techStack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "GSAP"]
+    },
+    {
+      "slug": "ecommerce-platform",
+      "title": "Платформа электронной коммерции",
+      "description": "Full-stack платформа с интеграцией оплаты и панелью администратора.",
+      "longDescription": "Полное решение для электронной коммерции с управлением товарами, корзиной, интеграцией Stripe и панелью администратора для управления заказами и инвентарём.",
+      "category": "Full Stack",
+      "tags": ["React", "Node.js", "PostgreSQL", "Stripe"],
+      "featured": true,
+      "year": 2024,
+      "thumbnail": { "src": "/images/projects/ecommerce.jpg", "alt": "Платформа электронной коммерции" },
+      "images": [],
+      "liveUrl": null,
+      "githubUrl": null,
+      "techStack": ["React", "Node.js", "Express", "PostgreSQL", "Stripe"]
+    },
+    {
+      "slug": "task-manager",
+      "title": "Менеджер задач",
+      "description": "Совместное приложение для управления задачами с обновлениями в реальном времени.",
+      "longDescription": "Приложение для управления задачами в реальном времени с drag-and-drop досками, комментариями, вложениями файлов и совместной работой через WebSocket.",
+      "category": "Full Stack",
+      "tags": ["Next.js", "Prisma", "WebSocket", "TypeScript"],
+      "featured": false,
+      "year": 2024,
+      "thumbnail": { "src": "/images/projects/taskmanager.jpg", "alt": "Менеджер задач" },
+      "images": [],
+      "liveUrl": null,
+      "githubUrl": null,
+      "techStack": ["Next.js", "Prisma", "PostgreSQL", "WebSocket"]
+    }
+  ]
+}

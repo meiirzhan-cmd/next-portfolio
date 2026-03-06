@@ -1,0 +1,44 @@
+{
+  "seo": {
+    "title": "Блог — Мейіржан",
+    "description": "Мысли о веб-разработке, программировании и технологиях.",
+    "keywords": ["блог", "веб-разработка", "программирование", "туториалы"]
+  },
+  "heading": "Блог",
+  "subtitle": "Мысли, туториалы и инсайты о веб-разработке и технологиях.",
+  "posts": [
+    {
+      "slug": "getting-started-with-nextjs-15",
+      "title": "Начало работы с Next.js 15",
+      "excerpt": "Введение в новые возможности Next.js 15, включая улучшения App Router и React Server Components.",
+      "content": "",
+      "publishedAt": "2025-01-15T00:00:00Z",
+      "readingTime": 5,
+      "tags": ["Next.js", "React", "Туториал"],
+      "thumbnail": { "src": "/images/blog/nextjs.jpg", "alt": "Next.js 15" },
+      "featured": true
+    },
+    {
+      "slug": "tailwind-css-v4-whats-new",
+      "title": "Tailwind CSS v4: Что нового",
+      "excerpt": "Обзор основных изменений в Tailwind CSS v4 — от нового движка до CSS-first конфигурации.",
+      "content": "",
+      "publishedAt": "2025-02-10T00:00:00Z",
+      "readingTime": 4,
+      "tags": ["CSS", "Tailwind", "Фронтенд"],
+      "thumbnail": { "src": "/images/blog/tailwind.jpg", "alt": "Tailwind CSS v4" },
+      "featured": true
+    },
+    {
+      "slug": "gsap-animations-in-react",
+      "title": "Анимации GSAP в React",
+      "excerpt": "Практическое руководство по созданию плавных и производительных анимаций в React-приложениях с помощью GSAP.",
+      "content": "",
+      "publishedAt": "2025-03-01T00:00:00Z",
+      "readingTime": 7,
+      "tags": ["GSAP", "React", "Анимация"],
+      "thumbnail": { "src": "/images/blog/gsap.jpg", "alt": "Анимации GSAP" },
+      "featured": false
+    }
+  ]
+}

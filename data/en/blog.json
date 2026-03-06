@@ -1,0 +1,44 @@
+{
+  "seo": {
+    "title": "Blog — Meiirzhan",
+    "description": "Thoughts on web development, programming, and technology.",
+    "keywords": ["blog", "web development", "programming", "tutorials"]
+  },
+  "heading": "Blog",
+  "subtitle": "Thoughts, tutorials, and insights on web development and technology.",
+  "posts": [
+    {
+      "slug": "getting-started-with-nextjs-15",
+      "title": "Getting Started with Next.js 15",
+      "excerpt": "An introduction to the latest features in Next.js 15, including the new App Router improvements and React Server Components.",
+      "content": "",
+      "publishedAt": "2025-01-15T00:00:00Z",
+      "readingTime": 5,
+      "tags": ["Next.js", "React", "Tutorial"],
+      "thumbnail": { "src": "/images/blog/nextjs.jpg", "alt": "Next.js 15" },
+      "featured": true
+    },
+    {
+      "slug": "tailwind-css-v4-whats-new",
+      "title": "Tailwind CSS v4: What's New",
+      "excerpt": "Exploring the major changes in Tailwind CSS v4, from the new engine to CSS-first configuration.",
+      "content": "",
+      "publishedAt": "2025-02-10T00:00:00Z",
+      "readingTime": 4,
+      "tags": ["CSS", "Tailwind", "Frontend"],
+      "thumbnail": { "src": "/images/blog/tailwind.jpg", "alt": "Tailwind CSS v4" },
+      "featured": true
+    },
+    {
+      "slug": "gsap-animations-in-react",
+      "title": "GSAP Animations in React",
+      "excerpt": "A practical guide to creating smooth, performant animations in React applications using GSAP.",
+      "content": "",
+      "publishedAt": "2025-03-01T00:00:00Z",
+      "readingTime": 7,
+      "tags": ["GSAP", "React", "Animation"],
+      "thumbnail": { "src": "/images/blog/gsap.jpg", "alt": "GSAP Animations" },
+      "featured": false
+    }
+  ]
+}

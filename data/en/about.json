@@ -1,0 +1,48 @@
+{
+  "seo": {
+    "title": "About — Meiirzhan",
+    "description": "Learn more about Meiirzhan, a Full Stack Developer passionate about modern web technologies.",
+    "keywords": ["about", "developer", "full stack", "skills", "experience"]
+  },
+  "name": "Meiirzhan",
+  "title": "Full Stack Developer",
+  "bio": "I'm a Full Stack Developer with a passion for creating beautiful, performant web applications. I specialize in React, Next.js, TypeScript, and Node.js. I believe in writing clean, maintainable code that scales well and delivers great user experiences.\n\nWhen I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and sharing knowledge with the developer community.",
+  "shortBio": "Full Stack Developer specializing in modern web technologies.",
+  "avatar": "/images/rectangle.jpeg",
+  "location": "Kazakhstan",
+  "resumeUrl": "/resume.pdf",
+  "socials": [
+    { "platform": "github", "url": "https://github.com", "label": "GitHub" },
+    { "platform": "linkedin", "url": "https://linkedin.com", "label": "LinkedIn" },
+    { "platform": "telegram", "url": "https://t.me", "label": "Telegram" }
+  ],
+  "skills": [
+    { "name": "TypeScript", "category": "frontend", "level": 5, "icon": "typescript" },
+    { "name": "React", "category": "frontend", "level": 5, "icon": "react" },
+    { "name": "Next.js", "category": "frontend", "level": 5, "icon": "nextjs" },
+    { "name": "Tailwind CSS", "category": "frontend", "level": 4, "icon": "tailwind" },
+    { "name": "Node.js", "category": "backend", "level": 4, "icon": "nodejs" },
+    { "name": "PostgreSQL", "category": "backend", "level": 4, "icon": "postgresql" },
+    { "name": "Docker", "category": "devops", "level": 3, "icon": "docker" },
+    { "name": "Git", "category": "tools", "level": 5, "icon": "git" }
+  ],
+  "experience": [
+    {
+      "company": "Company Name",
+      "role": "Full Stack Developer",
+      "startDate": "2023-01",
+      "endDate": "present",
+      "description": "Building modern web applications with React, Next.js, and TypeScript. Working on scalable backend services and improving developer experience.",
+      "technologies": ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University",
+      "degree": "Bachelor's",
+      "field": "Computer Science",
+      "startDate": "2019-09",
+      "endDate": "2023-06"
+    }
+  ]
+}

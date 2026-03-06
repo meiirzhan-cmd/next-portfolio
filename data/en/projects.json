@@ -1,0 +1,57 @@
+{
+  "seo": {
+    "title": "Projects — Meiirzhan",
+    "description": "Explore my portfolio of web development projects built with modern technologies.",
+    "keywords": ["projects", "portfolio", "web development", "react", "next.js"]
+  },
+  "heading": "Projects",
+  "subtitle": "A collection of projects I've worked on, from personal experiments to production applications.",
+  "categories": ["All", "Frontend", "Full Stack", "Open Source"],
+  "projects": [
+    {
+      "slug": "portfolio-website",
+      "title": "Portfolio Website",
+      "description": "A modern portfolio built with Next.js, Tailwind CSS, and GSAP animations.",
+      "longDescription": "This portfolio website showcases my work and skills. Built with Next.js 15, Tailwind CSS v4, and GSAP for smooth animations. Features include dark mode, i18n support, and responsive design.",
+      "category": "Frontend",
+      "tags": ["Next.js", "Tailwind CSS", "GSAP", "TypeScript"],
+      "featured": true,
+      "year": 2025,
+      "thumbnail": { "src": "/images/projects/portfolio.jpg", "alt": "Portfolio Website" },
+      "images": [],
+      "liveUrl": null,
+      "githubUrl": null,
+      "techStack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "GSAP"]
+    },
+    {
+      "slug": "ecommerce-platform",
+      "title": "E-Commerce Platform",
+      "description": "Full-stack e-commerce platform with payment integration and admin dashboard.",
+      "longDescription": "A complete e-commerce solution with product management, shopping cart, Stripe payment integration, and an admin dashboard for managing orders and inventory.",
+      "category": "Full Stack",
+      "tags": ["React", "Node.js", "PostgreSQL", "Stripe"],
+      "featured": true,
+      "year": 2024,
+      "thumbnail": { "src": "/images/projects/ecommerce.jpg", "alt": "E-Commerce Platform" },
+      "images": [],
+      "liveUrl": null,
+      "githubUrl": null,
+      "techStack": ["React", "Node.js", "Express", "PostgreSQL", "Stripe"]
+    },
+    {
+      "slug": "task-manager",
+      "title": "Task Manager App",
+      "description": "A collaborative task management application with real-time updates.",
+      "longDescription": "Real-time task management app supporting teams with drag-and-drop boards, comments, file attachments, and live collaboration through WebSockets.",
+      "category": "Full Stack",
+      "tags": ["Next.js", "Prisma", "WebSocket", "TypeScript"],
+      "featured": false,
+      "year": 2024,
+      "thumbnail": { "src": "/images/projects/taskmanager.jpg", "alt": "Task Manager App" },
+      "images": [],
+      "liveUrl": null,
+      "githubUrl": null,
+      "techStack": ["Next.js", "Prisma", "PostgreSQL", "WebSocket"]
+    }
+  ]
+}

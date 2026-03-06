@@ -1,0 +1,48 @@
+{
+  "seo": {
+    "title": "Обо мне — Мейіржан",
+    "description": "Узнайте больше о Мейіржане, Full Stack разработчике, увлечённом современными веб-технологиями.",
+    "keywords": ["обо мне", "разработчик", "full stack", "навыки", "опыт"]
+  },
+  "name": "Мейіржан",
+  "title": "Full Stack Разработчик",
+  "bio": "Я Full Stack разработчик, увлечённый созданием красивых и производительных веб-приложений. Я специализируюсь на React, Next.js, TypeScript и Node.js. Я верю в написание чистого, поддерживаемого кода, который хорошо масштабируется и обеспечивает отличный пользовательский опыт.\n\nКогда я не пишу код, мне нравится изучать новые технологии, вносить вклад в проекты с открытым исходным кодом и делиться знаниями с сообществом разработчиков.",
+  "shortBio": "Full Stack разработчик, специализирующийся на современных веб-технологиях.",
+  "avatar": "/images/rectangle.jpeg",
+  "location": "Казахстан",
+  "resumeUrl": "/resume.pdf",
+  "socials": [
+    { "platform": "github", "url": "https://github.com", "label": "GitHub" },
+    { "platform": "linkedin", "url": "https://linkedin.com", "label": "LinkedIn" },
+    { "platform": "telegram", "url": "https://t.me", "label": "Telegram" }
+  ],
+  "skills": [
+    { "name": "TypeScript", "category": "frontend", "level": 5, "icon": "typescript" },
+    { "name": "React", "category": "frontend", "level": 5, "icon": "react" },
+    { "name": "Next.js", "category": "frontend", "level": 5, "icon": "nextjs" },
+    { "name": "Tailwind CSS", "category": "frontend", "level": 4, "icon": "tailwind" },
+    { "name": "Node.js", "category": "backend", "level": 4, "icon": "nodejs" },
+    { "name": "PostgreSQL", "category": "backend", "level": 4, "icon": "postgresql" },
+    { "name": "Docker", "category": "devops", "level": 3, "icon": "docker" },
+    { "name": "Git", "category": "tools", "level": 5, "icon": "git" }
+  ],
+  "experience": [
+    {
+      "company": "Название компании",
+      "role": "Full Stack Разработчик",
+      "startDate": "2023-01",
+      "endDate": "present",
+      "description": "Создание современных веб-приложений с React, Next.js и TypeScript. Работа над масштабируемыми серверными сервисами и улучшение опыта разработки.",
+      "technologies": ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Университет",
+      "degree": "Бакалавр",
+      "field": "Компьютерные науки",
+      "startDate": "2019-09",
+      "endDate": "2023-06"
+    }
+  ]
+}

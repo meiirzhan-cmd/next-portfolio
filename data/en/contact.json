@@ -1,0 +1,29 @@
+{
+  "seo": {
+    "title": "Contact — Meiirzhan",
+    "description": "Get in touch with me for collaboration, freelance work, or just to say hello.",
+    "keywords": ["contact", "hire", "freelance", "collaboration"]
+  },
+  "heading": "Get in Touch",
+  "subtitle": "Have a project in mind or want to collaborate? I'd love to hear from you.",
+  "email": "hello@example.com",
+  "socials": [
+    { "platform": "github", "url": "https://github.com", "label": "GitHub" },
+    { "platform": "linkedin", "url": "https://linkedin.com", "label": "LinkedIn" },
+    { "platform": "telegram", "url": "https://t.me", "label": "Telegram" }
+  ],
+  "formLabels": {
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully! I'll get back to you soon.",
+    "error": "Something went wrong. Please try again later."
+  },
+  "availability": {
+    "status": "available",
+    "message": "Currently available for freelance work"
+  }
+}
